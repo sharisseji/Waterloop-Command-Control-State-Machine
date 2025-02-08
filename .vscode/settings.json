@@ -1,0 +1,6 @@
+{
+    "python.analysis.extraPaths": [
+        "./WATERLOOP/test_pb2_",
+        "./WATERLOOP/test_pb2_"
+    ]
+}
