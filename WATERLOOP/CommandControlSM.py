@@ -112,9 +112,7 @@ grpc_msg = GRPCMessage(2, 4) # set board_type = 2, and data_type = 4, include th
 
 ## TEST ##
 def main():
-    # below is a check to see if the server is running
-    # import sys
-    # print(sys.path)
+    # later run major checks here
     grpc_client.run() # recieves the message from the server, if server is running
     return 0   
 
