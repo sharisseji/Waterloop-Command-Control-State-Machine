@@ -63,7 +63,7 @@ class GRPCMessage:
 ## GPRC -> CAN FUNCTIONS ##
 def process_GRPC_message(grpc_msg):
     """
-    Takes the data from the INCOMING GRPC message and packs it into the CAN frame
+    Takes the data from the INCOMING gRPC message and packs it into the CAN frame
 
     Args: 
         grpc_msg (GPRCMessage) : contains a gRPC message object sent by the server
