@@ -9,7 +9,7 @@ enum BoardType {
     MC = 2;    // Motor Controller
 }
 
-//DATA Types
+// DATA Types
 // BMS Data Types
 enum BMSDataType {
     TEMPERATURE_ADC = 0;   // Temperature of ADC
