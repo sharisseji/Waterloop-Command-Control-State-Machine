@@ -13,7 +13,8 @@
 import can  
 import grpc
 import test_pb2
-import grpc_client  
+import grpc_client
+import grpc_testserver  
 import struct
 import logging
 import time
@@ -23,7 +24,7 @@ logging.basicConfig(level=logging.DEBUG)
 logger = logging.getLogger(__name__)
 
 # Initialization of gRPC channel and stub
-channel = grpc.insecure_channel('') # during testing, use computer IP address instead of localhost:50051
+channel = grpc.insecure_channel('localhost:50051') # during testing, use computer IP address instead of localhost:50051
 
 MC_DATA_TYPES = {
     0: test_pb2.MCDataType.BATTERY_VOLTAGE,
@@ -104,7 +105,7 @@ def listen_for_GRPC_messages():
 
 ## EXAMPLE USAGE ##
 # 1. Create an object of class GRPCMessage
-grpc_msg = GRPCMessage(2, 4) # set board_type = 2, and data_type = 4, include the sensor id and raw_data
+# grpc_msg = GRPCMessage(2, 4) # set board_type = 2, and data_type = 4, include the sensor id and raw_data
 
 # 2. Process the message and send it over the CAN bus (assume 'bus' is a configured instance in this network)
 # send_CAN(grpc_msg, bus) # bus has not been configured yet
@@ -113,6 +114,7 @@ grpc_msg = GRPCMessage(2, 4) # set board_type = 2, and data_type = 4, include th
 ## TEST ##
 def main():
     # later run major checks here
+    # grpc_testserver.serve()
     grpc_client.run() # recieves the message from the server, if server is running
     return 0   
 
