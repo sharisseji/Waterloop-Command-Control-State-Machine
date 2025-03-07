@@ -1,5 +1,5 @@
 # Waterloop-Command-Control-State-Machine
-In development. Waterloop's Hyperloop Pod is controlled by distributed flight computer hosted on a Raspberry Pi. This is the host application's command control state machine, which parses commands between the web dashboard and the motor controller.
+In development. Waterloop's Hyperloop Pod is controlled by distributed flight computer hosted on a Raspberry Pi. This is the RPI host application's command control state machine, which parses commands between the web dashboard and the motor controller using gRPC and CAN.
 
 ## Cloning Instructions for Windows
 Before cloning the repo, ensure you:
