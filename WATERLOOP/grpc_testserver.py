@@ -61,6 +61,26 @@ class TestService(test_pb2_grpc.TestServiceServicer):
         # print(f"Received request: {request.message}")
         # return test_pb2.TestResponse(message="Test response message")  # this is when the actual message gets delivered
 
+# class TelemetryServiceServicer(test_pb2_grpc.TelemetryServiceServicer):
+#     def SendTelemetry(self, request, context):
+#         print(f"Received telemetry: Board Type: {request.board_type}, "
+#               f"Data Type: {request.WhichOneof('data_type')}, Sensor ID: {request.sensor_id}, "
+#               f"Data: {request.data}")
+#         # Process or store the data here
+#         return test_pb2.Empty()
+
+# def serve():
+#     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
+#     telemetry_pb2_grpc.add_TelemetryServiceServicer_to_server(TelemetryServiceServicer(), server)
+#     server.add_insecure_port('[::]:50051')
+#     server.start()
+#     print("gRPC server started on port 50051")
+#     try:
+#         while True:
+#             time.sleep(86400)  # Keep the server running
+#     except KeyboardInterrupt:
+#         server.stop(0)
+
 def serve():
     server = grpc.server(futures.ThreadPoolExecutor(max_workers=10))
     test_pb2_grpc.add_TestServiceServicer_to_server(TestService(), server)
